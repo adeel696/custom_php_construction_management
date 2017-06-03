@@ -1,0 +1,13 @@
+Time : 13:16:09
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sn_stock.SN_SType_Id=1' at line 7
+Raw SQL : SELECT sn_stock.SN_Stock_Id , sn_person.SN_Name , sn_person.SN_Phone, sn_person.SN_Mobile , sn_stock_type.SN_Description SN_Type_Desc , sn_stock.SN_Quantity , sn_stock.SN_Amount,sn_stock.SN_Description,sn_stock.Record_on
+from
+sn_person , sn_stock ,  sn_stock_type
+where
+sn_stock.SN_PersonId=sn_person.SN_PersonId
+and 
+sn_stock.SN_SType_Id=sn_stock_type.SN_SType_Idand sn_stock.SN_SType_Id=1
+
+Time : 12:37:20
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : INSERT INTO sn_stock_current(SN_PersonId,SN_SType_Id,SN_Quantity) 	VALUES(:SN_PersonId,:SN_SType_Id,:SN_Quantity)
